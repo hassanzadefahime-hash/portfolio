@@ -48,7 +48,7 @@ const Cources = () => {
   return (
     <Card
       sx={{
-        height: "100vh",
+        minHeight: "100vh",
         background: isDark ? "#0f0f0f" : "#fff",
         boxShadow: "none",
         direction:"ltr"
