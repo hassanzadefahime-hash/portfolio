@@ -10,6 +10,11 @@ const SliderProvider = ({ children }) => {
         height: "100vh",
         overflowX: "hidden",
         overflowY: "auto",
+
+        scrollbarWidth: "none",
+        "&::-webkit-scrollbar": {
+          display: "none",
+        },
         boxShadow:
           theme.palette.mode === "dark"
             ? "5px 0 8px 2px #000000"

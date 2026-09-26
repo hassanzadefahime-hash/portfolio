@@ -3,6 +3,7 @@ const TabPanel = (props) => {
     const { index, value, children, ...other } = props;
     return (
     <div
+      
       role="tabpanel"
       hidden={value !== index}
       id={`vertical-tabpanel-${index}`}

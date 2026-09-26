@@ -166,7 +166,7 @@ const Cources = () => {
                     variant="body2"
                     fontSize="16px"
                   >
-                    مشاهده
+                    مشاهده نمونه کار
                   </Typography>
 
                   <WestOutlined fontSize="10px" />
