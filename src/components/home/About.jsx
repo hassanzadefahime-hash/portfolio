@@ -46,8 +46,8 @@ const About = () => {
     text: isDark ? "#D1D5DC" : "#030712",
     secondaryText: isDark ? "#9CA3AF" : "#575757",
     cardBackground: isDark
-      ? "red"
-      : "red",
+      ? "rgba(0, 0, 0, 0.2)"
+      : "rgba(255, 255, 255, 0.65)",
     cardBorder: isDark
       ? "1px solid rgba(255, 255, 255, 0.08)"
       : "1px solid rgba(0, 0, 0, 0.08)",
