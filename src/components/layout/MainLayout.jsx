@@ -93,6 +93,7 @@ const MainLayout = ({ children, mode, handleMode }) => {
               width: "100%",
               overflow: "hidden",
               direction: "ltr",
+              
             }}
           >
             <SliderProvider>
@@ -192,11 +193,13 @@ const MainLayout = ({ children, mode, handleMode }) => {
                 xl: 10,
               }}
               sx={{
+                
                 height: "100vh",
                 minWidth: 0,
                 overflow: "hidden",
                 backgroundColor:
                   mode === "dark" ? "#0f0f0f" : "#f5f5f5",
+            
               }}
             >
               <SwipeableViews

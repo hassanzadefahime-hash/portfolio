@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Card,
   CardActionArea,
@@ -11,8 +12,11 @@ import {
 } from "@mui/material";
 
 import { WestOutlined } from "@mui/icons-material";
-import laptop from "../../assets/images/laptop.png";
-
+import portfolio from "../../assets/images/portfolio.webp";
+import shop from "../../assets/images/shop.webp";
+import asmine from "../../assets/images/asmine.webp"
+import contact from "../../assets/images/contacts.webp"
+import weblog from "../../assets/images/weblog.webp"
 const Cources = () => {
   const theme = useTheme();
 
@@ -20,29 +24,38 @@ const Cources = () => {
 
   const courses = [
     {
-      title: "پورتفولیو",
-      image: laptop,
+      title: "پورتفولیو شخصی",
+      image: portfolio,
+      caption: "وبسایت شخصی برای معرفی مهارت‌ها،... باطراحی مدرن و مینیمال",
+      tag: "وبسایت",
     },
     {
-      title: "پورتفولیو",
-      image: laptop,
+      title: "فروشگاه لوازم جانبی موبایل",
+      image: shop,
+      caption:
+        "یک فروشگاه اینترنتی مدرن برای خرید قاب، گلس و لوازم جانبی موبایل با طراحی رسپانسیو و تجربه کاری عالی",
+      tag: "فروشگاهی",
     },
     {
-      title: "پورتفولیو",
-      image: laptop,
+      title: "پورتفولیو شخصی",
+      image: asmine,
+      caption:
+      "وبسایت شخصی برای معرفی مهارت‌ها،... باطراحی مدرن و مینیمال",
+      tag:"وبسایت"
     },
     {
-      title: "پورتفولیو",
-      image: laptop,
+      title: "اپلیکیشن مدیریت مخاطبین",
+      image: contact,
+      caption:"یک اپلیکیشن ساده و کاربردی برای ثبت مخاطبین با قابلیت جستجو",
+      tag:"ابزار"
     },
     {
-      title: "پورتفولیو",
-      image: laptop,
+      title: "اپلیکیشن ساده",
+      image: weblog,
+      caption:"یک اپلیکیشن ساده و کاربردی برای ثبت و مدیریت رمان ها با قابلیت جستجو و دسته‌بندی",
+      tag:"وبلاگ"
     },
-    {
-      title: "پورتفولیو",
-      image: laptop,
-    },
+
   ];
 
   return (
@@ -51,7 +64,7 @@ const Cources = () => {
         minHeight: "100vh",
         background: isDark ? "#0f0f0f" : "#fff",
         boxShadow: "none",
-        direction:"ltr"
+        direction: "ltr",
       }}
     >
       <Grid
@@ -68,7 +81,7 @@ const Cources = () => {
               xs: 12,
               sm: 6,
               md: 4,
-              lg: 3,
+              lg: 4,
             }}
             sx={{
               px: 1,
@@ -80,7 +93,7 @@ const Cources = () => {
                 mb: 3,
                 borderRadius: "16px",
                 overflow: "hidden",
-
+                position: "relative",
                 boxShadow: isDark
                   ? "0px 0px 8px 4px #000"
                   : "0px 0px 8px 4px #9090906d",
@@ -98,6 +111,27 @@ const Cources = () => {
             >
               {/* Image + title */}
               <CardActionArea>
+                <Box
+                  sx={{
+                    position: "absolute",
+                    right: 10,
+                    top: 10,
+                    paddingX: 1.2,
+                    height: 28,
+                    fontWeight: "bold",
+                    display: "felx",
+                    alignItems: "center",
+                    background: `linear-gradient(135deg,rgba(255, 140, 0, 0.8),rgba(255, 94, 0, 0.6))`,
+                    backdropFilter: "blur(20px)",
+
+                    border: "1px solid rgba(255, 165, 0, 0.5)",
+                    borderRadius: 4,
+
+                    boxShadow: "0 0 30px rgba(255, 140, 0, 0.2)",
+                  }}
+                >
+                  <Typography variant="caption">{course.tag}</Typography>
+                </Box>
                 <CardMedia
                   component="img"
                   image={course.image}
@@ -109,17 +143,28 @@ const Cources = () => {
                       sm: 180,
                       md: 190,
                     },
-                    objectFit: "cover",
+                    objectFit: "fill",
+                    top: 0,
                   }}
                 />
 
-                <CardContent>
+                <CardContent sx={{ display: "flex", flexDirection: "column" }}>
                   <Typography
                     textAlign="left"
                     variant="body2"
                     fontWeight="bold"
                   >
                     {course.title}
+                  </Typography>
+
+                  <Typography
+                    textAlign="left"
+                    variant="caption"
+                    fontWeight="bold"
+                    marginTop={1}
+                    sx={{ color: isDark ? "gray" : "black" }}
+                  >
+                    {course.caption}
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -161,12 +206,8 @@ const Cources = () => {
                     },
                   }}
                 >
-                  <Typography
-                    component="span"
-                    variant="body2"
-                    fontSize="16px"
-                  >
-                    مشاهده نمونه کار
+                  <Typography component="span" variant="body2" fontSize="16px">
+                    مشاهده پروژه
                   </Typography>
 
                   <WestOutlined fontSize="10px" />
